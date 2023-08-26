@@ -160,6 +160,8 @@ navbar {
     height: 100%;
     border-radius: 0px;
     display: block;
+    visibility: hidden;
+    opacity: 0;
 }
 
     .RoutingSelectorBackdrop .RoutingSelector {
@@ -178,32 +180,42 @@ navbar {
         overflow: auto;
     }
 
-        .RoutingSelectorBackdrop .RoutingSelector .RoutingSelector-List {
-            display: block;
+    .RoutingSelectorBackdrop.show {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 0.25s ease-out;
+    }
+
+        .RoutingSelectorBackdrop.show .RoutingSelector {
+            transition: opacity 0.25s ease-out;
         }
 
-            .RoutingSelectorBackdrop .RoutingSelector .RoutingSelector-List .RoutingSelector-Item {
-                display: block;
-                text-decoration: none;
-                color: var(--accent-color);
+    .RoutingSelectorBackdrop .RoutingSelector .RoutingSelector-List {
+        display: block;
+    }
+
+        .RoutingSelectorBackdrop .RoutingSelector .RoutingSelector-List .RoutingSelector-Item {
+            display: block;
+            text-decoration: none;
+            color: var(--accent-color);
+        }
+
+            .RoutingSelectorBackdrop .RoutingSelector .RoutingSelector-List .RoutingSelector-Item .RoutingSelector-Icon {
+                display: inline-block;
+                vertical-align: middle;
+                width: 48px;
+                height: 48px;
+                background-color: var(--accent-color);
+                border: 0px;
+                padding: 0px;
+                margin: 0px;
+                margin: 9px 9px 9px 18px;
             }
 
-                .RoutingSelectorBackdrop .RoutingSelector .RoutingSelector-List .RoutingSelector-Item .RoutingSelector-Icon {
-                    display: inline-block;
-                    vertical-align: middle;
-                    width: 48px;
-                    height: 48px;
-                    background-color: var(--accent-color);
-                    border: 0px;
-                    padding: 0px;
-                    margin: 0px;
-                    margin: 9px 9px 9px 18px;
-                }
-
-                .RoutingSelectorBackdrop .RoutingSelector .RoutingSelector-List .RoutingSelector-Item span {
-                    display: inline-block;
-                    vertical-align: middle;
-                }
+            .RoutingSelectorBackdrop .RoutingSelector .RoutingSelector-List .RoutingSelector-Item span {
+                display: inline-block;
+                vertical-align: middle;
+            }
 
 
 .zellasoft-watermark {

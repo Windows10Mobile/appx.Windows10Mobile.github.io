@@ -48,7 +48,7 @@
             if (r.test(navigator.userAgent)) {
                 let ver = parseInt(navigator.userAgent.match(r)[3]);
                 if (ver < 15063) {
-                    ZellaSoft.View.ContentDialog("Update Windows 10 Mobile to version 10.0.15063.0 or later to use \"Microsoft App Installer\".");
+                    ZellaSoft.View.ContentDialog("Update Windows 10 Mobile to version 10.0.15063.0 or later to use \"Microsoft App Installer\", other sideloaders may still work.");
                 } else if (ver < 15254) {
                     ZellaSoft.View.ContentDialog("Optional update to Windows 10 Mobile 10.0.15254.603.");
                 }
@@ -59,7 +59,7 @@
         },
         "ToggleRoutingSelector": function () {
             let el = document.getElementsByClassName("RoutingSelectorBackdrop")[0];
-            el.classList.toggle("hidden");
+            el.classList.toggle("show");
             return false;
         },
         "ShowTroubleshooter": function () {
@@ -68,7 +68,7 @@
             return false;
         },
         "SideloaderClicked": function () {
-            App.ShowTroubleshooter();
+            setTimeout(() => { App.ShowTroubleshooter(); }, 1000);
             App.ToggleRoutingSelector();
             return false;
         },
