@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Easy-Sideloader link generator</title>
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no,viewport-fit=cover">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <label for="appname">App Display Name:</label>
+        <input type="text" id="appname" name="appname" />
+
+        <label for="appxurl">APPX URL:</label>
+        <input type="text" id="appxurl" name="appxurl" />
+
+        <label for="tileurl">App Tile URL (.png):</label>
+        <input type="text" id="tileurl" name="tileurl" />
+
+        <button type="button" onclick="return GenerateLink()">Generate Link</button>
+
+        <input type="text" id="output" name="output" />
+    </form>
+
+    <script>
+        function GenerateLink() {
+            var l1 = document.getElementById('appname').value;
+            var l2 = document.getElementById('appxurl').value;
+            var l3 = document.getElementById('tileurl').value;
+            var o1 = document.getElementById('output');
+            o1.value = 'https://appx.Windows10Mobile.com/?source=' + encodeURI(l2) + '&title=' + encodeURI(l1) + '&tile=' + encodeURI(l3);
+            return false;
+        }
+    </script>
+</body>
+</html>
