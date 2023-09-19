@@ -10,7 +10,7 @@
         <label for="appname">App Display Name:</label>
         <input type="text" id="appname" name="appname" />
 
-        <label for="appxurl">APPX URL:</label>
+        <label for="appxurl">Package URL (.appx/.appxbundle):</label>
         <input type="text" id="appxurl" name="appxurl" />
 
         <label for="tileurl">App Tile URL (.png):</label>
@@ -27,7 +27,7 @@
             var l2 = document.getElementById('appxurl').value;
             var l3 = document.getElementById('tileurl').value;
             var o1 = document.getElementById('output');
-            o1.value = 'https://appx.Windows10Mobile.com/?source=' + encodeURI(l2) + '&title=' + encodeURI(l1) + '&tile=' + encodeURI(l3);
+            o1.value = 'https://appx.Windows10Mobile.com/?source=' + encodeURIComponent(l2) + '&title=' + encodeURIComponent(l1) + '&tile=' + encodeURIComponent(l3);
             return false;
         }
     </script>
