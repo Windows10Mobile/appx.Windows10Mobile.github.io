@@ -8,13 +8,16 @@
 
 
             let el = {};
+            let peng = '';
             if (ttle !== "undefined") {
                 el = document.getElementById('ProductDisplayName');
                 el.innerText = ttle;
+                peng += '&title=' + encodeURIComponent(ttle);
             }
             if (icon !== "undefined") {
                 el = document.getElementById('ProductDisplayTile');
                 el.setAttribute("src", icon);
+                peng += '&logo=' + encodeURIComponent(icon);
             }
 
             if (flnm !== "undefined" && dwnn !== "undefined") {
@@ -29,7 +32,8 @@
                 document.getElementById('ms-appinstaller').href += flnm;
                 document.getElementById('zellasoft-store').href += flnm;
                 document.getElementById('wut').href += flnm;
-                document.getElementById('open-store').href += flnm;
+                document.getElementById('open-store').href += encodeURIComponent(flnm);
+                document.getElementById('penguin-store').href += encodeURIComponent(flnm) + peng;
             }
 
 
