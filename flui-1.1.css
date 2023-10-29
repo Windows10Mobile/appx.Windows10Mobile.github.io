@@ -352,3 +352,80 @@ blocks {
             margin: 3px;
             display: inline-block;
         }
+
+.RoutingSelectorBackdrop {
+    background-color: rgba(0, 0, 0, 0.55);
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+}
+
+    .RoutingSelectorBackdrop .RoutingSelector {
+        background-color: #dddddd;
+        border: 0px;
+        padding: 0px;
+        margin: 0px;
+        position: absolute;
+        left: 0px;
+        bottom: 66px;
+        max-height: 66%;
+        min-height: 33%;
+        width: 100%;
+        border-radius: 0px;
+        display: block;
+        overflow: auto;
+    }
+
+    .RoutingSelectorBackdrop.show {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 0.25s ease-out;
+    }
+
+        .RoutingSelectorBackdrop.show .RoutingSelector {
+            transition: opacity 0.25s ease-out;
+        }
+
+    .RoutingSelectorBackdrop .RoutingSelector .RoutingSelector-List {
+        display: block;
+    }
+
+        .RoutingSelectorBackdrop .RoutingSelector .RoutingSelector-List .RoutingSelector-Item {
+            display: block;
+            text-decoration: none;
+            color: var(--accent-color);
+        }
+
+            .RoutingSelectorBackdrop .RoutingSelector .RoutingSelector-List .RoutingSelector-Item .RoutingSelector-Icon {
+                display: inline-block;
+                vertical-align: middle;
+                width: 48px;
+                height: 48px;
+                background-color: var(--accent-color);
+                border: 0px;
+                padding: 0px;
+                margin: 0px;
+                margin: 9px 9px 9px 18px;
+            }
+
+            .RoutingSelectorBackdrop .RoutingSelector .RoutingSelector-List .RoutingSelector-Item span {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+
+.zellasoft-watermark {
+    position: absolute;
+    opacity: 0.44;
+    right: 0.5em;
+    bottom: calc(66px + 0.5em);
+}
