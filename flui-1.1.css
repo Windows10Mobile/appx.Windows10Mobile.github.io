@@ -1,7 +1,19 @@
 html {
-    background-color: #FAFAFA;
-    height: 100%;
     --accent-color: highlight;
+    /*light theme: --accent-color-prohibited: #C69B48;*/
+    /*dark theme: --accent-color-prohibited: #B2923A;*/
+    --accent-color-prohibited: #B2923A;
+    --accent-compliment: #000000;
+    --page-background: #111111;
+    --panel-background: #222222;
+    --page-foreground: #fafafa;
+    --light-foreground: #aaaaaa;
+    --accent-light-compliment: #dddddd;
+    --accent-light-hover-compliment: #ffffff;
+    --accent-light-activated-compliment: #999999;
+    background-color: var(--page-background);
+    color: var(--page-foreground);
+    height: 100%;
 }
 
 html, body {
@@ -18,6 +30,10 @@ html, body {
     -ms-user-select: none;
     user-select: none;
     cursor: default;
+}
+
+.foreground path {
+    fill: var(--page-foreground);
 }
 
 .contentdialog {
@@ -62,7 +78,7 @@ html, body {
 
 button {
     border-width: 0px;
-    color: white;
+    color: var(--accent-compliment);
     background-color: var(--accent-color);
     padding: 5px 6px;
     border-radius: 5px;
@@ -96,7 +112,6 @@ button {
 .picture {
     width: 200px;
     height: 200px;
-    background-color: var(--accent-color);
     /*
     filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -117,7 +132,7 @@ button {
 }
 
 navbar {
-    background-color: white;
+    background-color: var(--panel-background);
     border: 0px;
     padding: 0px;
     margin: 0px;
@@ -140,94 +155,15 @@ navbar {
         font-family: 'Segoe UI', 'Helvetica Neue', 'sans-serif';
         line-height: 48px;
         text-decoration: none;
-        color: black;
+        color: var(--page-foreground);
     }
-
     navbar div .navbar-first {
         font-family: 'Segoe UI Semibold', 'Helvetica Neue', 'sans-serif';
     }
 
-
-.RoutingSelectorBackdrop {
-    background-color: rgba(0, 0, 0, 0.55);
-    border: 0px;
-    padding: 0px;
-    margin: 0px;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    border-radius: 0px;
-    display: block;
-    visibility: hidden;
-    opacity: 0;
-}
-
-    .RoutingSelectorBackdrop .RoutingSelector {
-        background-color: #dddddd;
-        border: 0px;
-        padding: 0px;
-        margin: 0px;
-        position: absolute;
-        left: 0px;
-        bottom: 66px;
-        max-height: 66%;
-        min-height: 33%;
-        width: 100%;
-        border-radius: 0px;
-        display: block;
-        overflow: auto;
-    }
-
-    .RoutingSelectorBackdrop.show {
-        visibility: visible;
-        opacity: 1;
-        transition: opacity 0.25s ease-out;
-    }
-
-        .RoutingSelectorBackdrop.show .RoutingSelector {
-            transition: opacity 0.25s ease-out;
-        }
-
-    .RoutingSelectorBackdrop .RoutingSelector .RoutingSelector-List {
-        display: block;
-    }
-
-        .RoutingSelectorBackdrop .RoutingSelector .RoutingSelector-List .RoutingSelector-Item {
-            display: block;
-            text-decoration: none;
-            color: var(--accent-color);
-        }
-
-            .RoutingSelectorBackdrop .RoutingSelector .RoutingSelector-List .RoutingSelector-Item .RoutingSelector-Icon {
-                display: inline-block;
-                vertical-align: middle;
-                width: 48px;
-                height: 48px;
-                background-color: var(--accent-color);
-                border: 0px;
-                padding: 0px;
-                margin: 0px;
-                margin: 9px 9px 9px 18px;
-            }
-
-            .RoutingSelectorBackdrop .RoutingSelector .RoutingSelector-List .RoutingSelector-Item span {
-                display: inline-block;
-                vertical-align: middle;
-            }
-
-
-.zellasoft-watermark {
-    position: absolute;
-    opacity: 0.44;
-    right: 0.5em;
-    bottom: calc(66px + 0.5em);
-}
-
 .docked-btn {
     background-color: var(--accent-color);
-    color: #dddddd;
+    color: var(--accent-light-compliment);
     text-decoration: none;
     border: 0px;
     padding: 0px;
@@ -245,12 +181,12 @@ navbar {
 
     .docked-btn:hover {
         /*background-color: #56baed;*/
-        color: #ffffff;
+        color: var(--accent-light-hover-compliment);
     }
 
     .docked-btn:active {
         /*background-color: #2F6581;*/
-        color: #999999;
+        color: var(--accent-light-activated-compliment);
     }
 
     .docked-btn svg {
@@ -268,7 +204,7 @@ navbar {
     }
 
 .unsupported, .unsupported:hover, .unsupported:active {
-    background-color: #C69B48;
+    background-color: var(--accent-color-prohibited);
     cursor: not-allowed;
 }
 
@@ -303,6 +239,7 @@ center {
 .sub-tabs {
     padding: 9px;
     border-radius: 8px;
+    background-color: var(--panel-background);
 }
 
     .sub-tabs * {
@@ -346,7 +283,7 @@ blocks {
 }
 
 #ProductDisplayName {
-    color: dimgray;
+    color: var(--light-foreground);
     font-size: 22px;
     font-family: 'Segoe UI Semibold', "Helvetica Neue", "sans-serif";
     margin: 12px 6px;
@@ -380,10 +317,9 @@ blocks {
 }
 
 .content-box {
-    /*text-align: justify;*/
-    text-align: initial;
+    text-align: justify;
     max-width: 450px;
-    background-color: white;
+    background-color: var(--panel-background);
     margin: 6px 12px;
     border-radius: 6px;
 }
